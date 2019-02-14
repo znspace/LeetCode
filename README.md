@@ -31,9 +31,12 @@ This table lists all the submissions in this repo, and there is a command provid
     npm run generate-readme
 
 
-| Sequence | Title        | Difficulty | Submission       |
-| -------- | :----------- | :--------: | :--------------- |
-| 1        | [Two Sum][1] |    Easy    | [001_two-sum][2] |
+| Sequence | Title | Difficulty | Submission |
+| - | :- | :-: | :- |
+| 1 | [Two Sum][1] | Easy | [001_two-sum][2] |
+| 2 | [Add Two Numbers][3] | Medium | [002_add-two-numbers][4] |
 
 [1]: https://leetcode.com/problems/two-sum/
 [2]: https://github.com/MrHuxu/leetcode/blob/master/problems/001_two-sum/index.js
+[3]: https://leetcode.com/problems/add-two-numbers/
+[4]: https://github.com/MrHuxu/leetcode/blob/master/problems/002_add-two-numbers/index.js
