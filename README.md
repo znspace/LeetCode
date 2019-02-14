@@ -1,6 +1,6 @@
 # My LeetCode
 
-[![Build Status](https://www.travis-ci.org/ZNspace/LeetCode.svg?branch=master)](https://www.travis-ci.org/ZNspace/LeetCode)
+[![Build Status](https://travis-ci.org/ZNspace/LeetCode.svg?branch=master)](https://travis-ci.org/ZNspace/LeetCode)
 
 ## Description
 This is the repo of my LeetCode solutions, and currently I just use JavaScript to solve the questions, maybe in the future, I will use other languages I like to get the ALL PASS grade.
