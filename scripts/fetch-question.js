@@ -1,9 +1,8 @@
 const { writeFileSync, mkdirSync, existsSync } = require('fs');
-const Generator = retuire('yeoman-generator');
 const { prompt } = require('inquirer');
 const { info } = require('better-console');
 
-const { DIFFICULTY_MAP, problemPath, clearConsole, getQuestionsDetails, getQuestionContent, unescapeHTML } = require('./script-utils');
+const { DIFFICULTY_MAP, problemPath, clearConsole, formatId, getQuestionsDetails, getQuestionContent, unescapeHTML } = require('./script-utils');
 
 const questionTitle = question => {
   const { id, difficulty, totalAcs, totalSubmitted, title } = question;
@@ -47,7 +46,7 @@ const actionToQuestion = question => {
   }).then(answer => {
     switch (answer.action) {
     case 'Yes':
-      // createFiles(id, slug, code);
+      createFiles(id, slug, code);
       return;
 
     case 'No':
@@ -58,6 +57,50 @@ const actionToQuestion = question => {
       return;
     }
   });
+};
+
+const createIndexFile = (submissionName, slug, code) => {
+  // const re = /var\ .*\ =\ function/;
+  // const funcName = re.exec(code)[0].split(' ')[1];
+  const funcName = slug
+    .split('-')
+    .map((str, i) =>
+      i
+        ? Array.from(str)
+          .map((ch, j) => (j ? ch : ch.toUpperCase()))
+          .join('')
+        : str
+    )
+    .join('');
+
+  writeFileSync(
+    `./problems/${submissionName}/index.js`,
+    `/**
+ * Problem: https://leetcode.com/problems/${slug}/description/
+ */
+` +
+      code +
+      `
+const ${funcName} = () => {
+
+};
+
+module.exports = ${funcName};
+`
+  );
+};
+
+const createTestFile = submissionName => {
+  writeFileSync(`./problems/${submissionName}/test-cases.js`, 'module.exports = [];');
+};
+
+const createFiles = (id, slug, code) => {
+  const submissionName = `${formatId(id)}_${slug}`;
+  mkdirSync(`./problems/${submissionName}`);
+  createIndexFile(submissionName, slug, code);
+  createTestFile(submissionName);
+
+  console.log(`problems/${submissionName}/index.js & problems/${submissionName}/test-cases.js are successfully created!`);
 };
 
 let CACHE_QUESTION_DETAILS;

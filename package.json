@@ -24,7 +24,6 @@
     "inquirer": "^5.1.0",
     "mocha": "^5.1.0",
     "request": "^2.83.0",
-    "superagent": "^4.1.0",
-    "yeoman-generator": "^3.2.0"
+    "superagent": "^4.1.0"
   }
 }

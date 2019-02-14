@@ -1,6 +1,6 @@
 # My LeetCode
 
-[![Build Status](https://www.travis-ci.org/ZNspace/LeetCode.svg?branch=master)](https://www.travis-ci.org/ZNspace/LeetCode)
+[![Build Status](https://www.travis-ci.org/MrHuxu/leetcode.svg?branch=master)](https://www.travis-ci.org/MrHuxu/leetcode)
 
 ## Description
 This is the repo of my LeetCode solutions, and currently I just use JavaScript to solve the questions, maybe in the future, I will use other languages I like to get the ALL PASS grade.
@@ -30,10 +30,3 @@ This table lists all the submissions in this repo, and there is a command provid
 
     npm run generate-readme
 
-
-| Sequence | Title        | Difficulty | Submission       |
-| -------- | :----------- | :--------: | :--------------- |
-| 1        | [Two Sum][1] |    Easy    | [001_two-sum][2] |
-
-[1]: https://leetcode.com/problems/two-sum/
-[2]: https://github.com/MrHuxu/leetcode/blob/master/problems/001_two-sum/index.js

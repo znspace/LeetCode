@@ -10,6 +10,8 @@ const ALGORITHM_URL = 'https://leetcode.com/api/problems/algorithms/';
 const README_PATH = resolve(__dirname, '..', 'README.md');
 const DIFFICULTY_MAP = { 1: 'Easy', 2: 'Medium', 3: 'Hard' };
 
+const questionUrl = slug => `${LEETCODE_URL}${slug}/`;
+
 const formatId = id => {
   id = id.toString();
   while (id.length < 3) id = '0' + id;
@@ -61,7 +63,7 @@ const getQuestionsDetails = async () => {
 const getQuestionContent = async question => {
   try {
     const { id, slug } = question;
-    const res = await superagent.get(`${LEETCODE_URL}${slug}`).type('application/json');
+    const res = await superagent.get(questionUrl(slug)).type('application/json');
     return { id, slug, ...getInfosFromPagedata(res.text) };
   } catch (err) {
     error(err);
@@ -91,7 +93,9 @@ module.exports = {
   DIFFICULTY_MAP,
 
   problemPath,
+  questionUrl,
   clearConsole,
+  formatId,
   getQuestionsDetails,
   getQuestionContent,
   unescapeHTML,
