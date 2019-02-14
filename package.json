@@ -1,0 +1,30 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "## Description This is the repo of my LeetCode solutions, and currently I just use Javascript to solve the questions, maybe in the future, I will use other languages I like to get the ALL PASS grade.",
+  "scripts": {
+    "question": "node ./scripts/fetch-question",
+    "readme": "node ./scripts/generate-readme",
+    "test": "./node_modules/mocha/bin/mocha ./scripts/run-test-cases.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZNspace/LeetCode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZNspace/LeetCode/issues"
+  },
+  "homepage": "https://github.com/ZNspace/LeetCode#readme",
+  "dependencies": {
+    "better-console": "^1.0.1",
+    "chai": "^4.1.2",
+    "cheerio": "^0.22.0",
+    "inquirer": "^5.1.0",
+    "mocha": "^5.1.0",
+    "request": "^2.83.0",
+    "superagent": "^4.1.0",
+    "yeoman-generator": "^3.2.0"
+  }
+}
