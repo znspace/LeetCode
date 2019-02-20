@@ -35,8 +35,14 @@ This table lists all the submissions in this repo, and there is a command provid
 | - | :- | :-: | :- |
 | 1 | [Two Sum][1] | Easy | [001_two-sum][2] |
 | 2 | [Add Two Numbers][3] | Medium | [002_add-two-numbers][4] |
+| 3 | [Longest Substring Without Repeating Characters][5] | Medium | [003_longest-substring-without-repeating-characters][6] |
+| 6 | [ZigZag Conversion][11] | Medium | [006_zigzag-conversion][12] |
 
 [1]: https://leetcode.com/problems/two-sum/
 [2]: https://github.com/MrHuxu/leetcode/blob/master/problems/001_two-sum/index.js
 [3]: https://leetcode.com/problems/add-two-numbers/
 [4]: https://github.com/MrHuxu/leetcode/blob/master/problems/002_add-two-numbers/index.js
+[5]: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+[6]: https://github.com/MrHuxu/leetcode/blob/master/problems/003_longest-substring-without-repeating-characters/index.js
+[11]: https://leetcode.com/problems/zigzag-conversion/
+[12]: https://github.com/MrHuxu/leetcode/blob/master/problems/006_zigzag-conversion/index.js
