@@ -7,6 +7,7 @@
     "readme": "node ./scripts/genarate-readme.js",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh",
     "test": "./node_modules/mocha/bin/mocha ./scripts/run-test-cases.js"
   },
   "repository": {
