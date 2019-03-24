@@ -5,6 +5,8 @@
   "scripts": {
     "question": "node ./scripts/fetch-question.js",
     "readme": "node ./scripts/genarate-readme.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "test": "./node_modules/mocha/bin/mocha ./scripts/run-test-cases.js"
   },
   "repository": {
@@ -25,5 +27,9 @@
     "mocha": "^5.1.0",
     "request": "^2.83.0",
     "superagent": "^4.1.0"
+  },
+  "devDependencies": {
+    "vuepress": "^0.14.10",
+    "webpack-dev-middleware": "^3.6.0"
   }
 }
