@@ -9,8 +9,13 @@ npm run docs:build
 # 进入生成的文件夹
 cd docs/.vuepress/dist
 
+touch README.md
+
 git init
+git config user.email zhounan.dev@gmail.com
+git config user.name "Zhou Nan"
 git add -A
-git push -f git@github.com:ZNspace/LeetCode.git.git master:gh-pages
+git commit -m 'deploy'
+git push -f git@github.com:ZNspace/LeetCode.git master:gh-pages
 
 cd -

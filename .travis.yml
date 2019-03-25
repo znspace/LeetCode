@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '9.3.0'
+  - 'node'
+cache: npm
 after_script:
-  - 'npm install'
-  - 'npm run deploy'
+  - npm run deploy
