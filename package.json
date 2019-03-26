@@ -8,7 +8,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
-    "test": "./node_modules/mocha/bin/mocha ./scripts/run-test-cases.js"
+    "test": "nyc ./node_modules/mocha/bin/mocha ./scripts/run-test-cases.js",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "cheerio": "^0.22.0",
     "inquirer": "^5.1.0",
     "mocha": "^5.1.0",
+    "nyc": "^13.3.0",
     "request": "^2.83.0",
     "superagent": "^4.1.0"
   },
