@@ -1,15 +1,28 @@
 language: node_js
 node_js:
   - node
-cache: npm
-before_install:
-  - openssl aes-256-cbc -K $encrypted_686d81839744_key -iv $encrypted_686d81839744_iv
-    -in github_rsa.enc -out ~\/.ssh/github_rsa -d
+cache:
+  directories:
+    - node_modules
+env:
+  global:
+    - GH_REF: github.com/ZNspace/LeetCode.git
+    - secure: UjhrNuziOikLte49H1jDSDXYs3k6uI9tpXMllbsFDpe6hhY8mdq/eq9bWE9AKkyz06eEOdW/2nyFikhhw+ShDZpiXXiq0+AsLCqn6oYcqrcQMBbyQUHCabTu2eaVqXj8fwKZcEY2H/YSZ0xohYK5kk+Cdg+MUw8LkAIdTmt0rLwPDkIXBiNMkGGMDc/0dWqARy5GCQKDsW9evbyR28iQHhgeRDXhKy0wLI8Oq5xMSJ6BZ9zIonKFS9x3+q9PzX3LOt7nYvlJr8+zq7MHfI3y9EsBAvWC7S4SaqEnvIzuwHFA9wmDHBSMH/Nh1WsbJSWQ/W0ToR0YokDUgRFy/07rtsLmQ9a1D6o5dEAklZRugwV7odFvv3WTPMmDXPCrZUdWdpOu9WFnQc9OeHB96FHQIvWTV3FMR+InCzBPRZhpi9eZEbL6IPI4tSUGAyXdt0y0REDSHdUiU2ogQof5pQkNCGndF5j7xquPOvdLXTBkDwhRlmIdXkOe4KBD1ZscaiV+XSQy8MeV5dXdmUaBE6egZOE93AbeCDjTBL1USlT+WOc+WaBSVeIN3Ddj+1vZPfLtX7MRjKQ43/FuAMxXGCg8U6qYF/r49dLlQtuJ0vcpRD21fSMqFkTBC5Te1I48POKuJXNuB2XcITljBtceNTYWdMr3Oje54gBJlFIpkBMSQnM=
+
 install:
   - npm install -g codecov
-  - npm install
+
 script:
   - npm run test
   - npm run report-coverage
+  - npm run docs:build
+
 after_script:
-  - npm run deploy
+  - cd docs/.vuepress/dist
+  - git init
+  - git config user.email "zhounan.dev@gmail.com"
+  - git config user.name "Zhou Nan"
+  - git add -A
+  - git commit -m "deploy docs"
+  - git push -f "https://${DEPLOY_GHPAGES_TOKEN}@${GH_REF}" master:gh-pages
+# E: Build LifeCycle
