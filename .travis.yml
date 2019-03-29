@@ -1,7 +1,10 @@
 language: node_js
 node_js:
-  - 'node'
+  - node
 cache: npm
+before_install:
+  - openssl aes-256-cbc -K $encrypted_686d81839744_key -iv $encrypted_686d81839744_iv
+    -in github_rsa.enc -out ~\/.ssh/github_rsa -d
 install:
   - npm install -g codecov
   - npm install
